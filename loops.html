@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in js</title>
+</head>
+<body>
+    <h1>LOOPS in js</h1>
+
+    <script>
+        let arr=[1,2,3,4,5,6];
+ 
+        console.log("for loop");
+        for(let i=0;i<arr.length;i++)
+        {
+            console.log(arr[i],i);
+        }
+
+        console.log("forEach loop");
+        arr.forEach(function(element,index){
+            console.log(element,index);
+        });
+
+        console.log("loop for object");
+        let obj={
+            name:'vasu',
+            place:'uttarakhand',
+            rank:1
+        };
+
+        for(let key in obj){
+            console.log(`${key} is ${obj[key]}`);
+        }
+
+    </script>
+</body>
+</html>
