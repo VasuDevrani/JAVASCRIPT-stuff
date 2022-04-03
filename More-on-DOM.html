@@ -1,0 +1,59 @@
+<!-- child nodes displays all the content inside the parent -->
+<!-- children displays only html elements -->
+<!-- nodeName displays name and nodeType displays the number assigned to a particular type -->
+<!--  console.log(nodeName)
+ console.log(nodeType)
+Node types
+1. Element
+2. Attribute
+3. Text Node
+8. Comment
+9. document
+10. docType -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>MORE ON DOM</title>
+</head>
+<body>
+    <h1>MORE ON DOM</h1>
+    <div class="container">
+        <div class="name1">name1</div>
+        <div class="name2">name2</div>
+        <div class="name3">name3</div>
+        <div class="name4">name4</div>
+    </div>
+    <input type="text" placeholder="Please write here">
+    <button>Click</button>
+</body>
+<script>
+//       console.log(document.childNodes)
+// VM410:1 NodeList(2) [<!DOCTYPE html>, html]0: <!DOCTYPE html>1: htmllength: 2[[Prototype]]: NodeList
+// undefined
+
+// let cont=document.querySelector(`.container`)
+// undefined
+
+// console.log(cont.innerHTML)
+// VM715:1 
+//         <div class="name1">name1</div>
+//         <div class="name2">name2</div>
+//         <div class="name3">name3</div>
+//         <div class="name4">name4</div>
+// undefined
+
+// cont.childNodes
+// NodeList(9) [text, div.name1, text, div.name2, text, div.name3, text, div.name4, text]0: text1: div.name12: text3: div.name24: text5: div.name36: text7: div.name48: textlength: 9[[Prototype]]: NodeList
+
+// cont.children
+// HTMLCollection(4) [div.name1, div.name2, div.name3, div.name4]0: div.name11: div.name22: div.name33: div.name4length: 4[[Prototype]]: HTMLCollection
+
+// cont.children[3]
+// <div class=​"name4">​name4​</div>​
+// cont.firstChild
+// #text
+</script>
+</html>

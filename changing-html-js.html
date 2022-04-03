@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing html in js</title>
+</head>
+<body>
+    <h1>CHANGING HTML IN JS</h1>
+    <div class="container">
+        <div class="name">name1</div>
+        <div class="name">name2</div>
+        <div class="name">name3</div>
+    </div>
+
+    <input type="text" placeholder="Please write here">
+    <button>Click me</button>
+
+    <script>
+        // creating a new element 
+        let element=document.createElement('p');
+        element.className='name';
+        element.id='nameAdded';
+        element.innerText='HI Hello Bye Bye';
+ 
+        let cont=document.querySelector('.container');
+        cont.appendChild(element);
+
+    //    creating element using nodes
+        let ele=document.createTextNode('Hello This is Bhaskar');
+        element.append(ele);
+        cont.appendChild(element);
+
+
+    </script>
+</body>
+</html>
