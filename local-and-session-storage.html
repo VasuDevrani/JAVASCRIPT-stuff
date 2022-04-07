@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>local-session</title>
+</head>
+<body>
+    <h1>LOCAL AND SESSION STORAGE</h1>
+    <div class="container">
+        <div class="name1">name1</div>
+        <div class="name2">name2</div>
+        <div class="name3">name3</div>
+        <div class="name4">name4</div>
+    </div>
+
+</body>
+<script>
+    // There are two types of storage for a website 
+    // Local storage is stores the data in tabular form for the website until unless it is removed
+    // Session storage stores the data for a particular session only and deletes as soon as the wesite is cleared
+
+
+    // sets the data
+    localStorage.setItem('name','html');
+    localStorage.setItem('name1','css');
+
+    console.log(localStorage);
+    // clears all data
+    // localStorage.clear();
+
+    localStorage.removeItem('name');
+
+    // for displaying in console 
+    console.log(localStorage.getItem('name1'));
+
+    // storing arrays in local storage, arrays can't be stored in the local storage directly but by converting them into strings
+    let arr=['hello','hi','bye'];
+    localStorage.setItem('arr_as_string',arr);
+    localStorage.setItem('arr_as_array',JSON.stringify(arr));
+
+    console.log(localStorage.getItem('arr_as_string'));
+    console.log(JSON.parse(localStorage.getItem('arr_as_array')));
+    
+    //  ALL THE ABOVE FUNCTIONS IS SAME FOR SESSION STORAGE EXCEPT ITS STORAGE DURATION
+</script>
+</html>
