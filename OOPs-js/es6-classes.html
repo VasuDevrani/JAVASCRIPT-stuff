@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes and objects</title>
+</head>
+<body>
+    <h1>CLASSES ANS OBJECTS</h1>
+
+    <script>
+
+        // ==========================================================================
+        // Class sport and its inherited class football (inherits prototype functions and everything)
+
+        class sport{    //classes in js consist of constructor and functions which can be accessed by objects
+            constructor(name,players,duration)
+            {
+                this.name=name,
+                this.players=players,
+                this.duration=duration
+            };
+
+            slogan(){
+                console.log(`Lets play ${this.name}`);
+            }
+
+            static add(a,b)     //static functions are global and can be used anywhere
+            {
+               console.log(a+b, "is the sum");
+            }
+        }
+
+        class football extends sport{
+            constructor(name,players,duration,popularity)
+            {
+                super(name,players,duration);
+                this.pop=popularity;
+            }
+            
+            express()
+            {
+                console.log("The game was tiring");
+            }
+        }
+
+        // =============================================================================
+        // objects from classes
+
+        let spo11=new sport("cricket",11,"24hr");
+        console.log(spo11);
+        console.log(spo11.slogan());
+
+        console.log(sport.add(2,10));
+
+        let spo22=new football("football",11,"90min","100%");
+        console.log(spo22);
+        console.log(spo22.express());
+        console.log(spo22.slogan());
+      
+
+    </script>
+</body>
+</html>

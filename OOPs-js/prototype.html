@@ -1,0 +1,47 @@
+<!-- prototypes are the predefined constructor or function that are present for object literals  -->
+<!-- JavaScript is a prototype-based language -->
+<!-- It is different from class inheritance -->
+
+<!-- Prototype inheritance defines objects for inheritance -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>prototype</title>
+  </head>
+  <body>
+    <h1>PROTOTYPE IN JS</h1>
+
+    <script>
+      // object literal
+    //   this has pre-provided prototype
+      let obj = {
+        name: "vasu",
+        course: "btech",
+        rollno: 2,
+      };
+
+      console.log(obj);
+
+      // constructor function
+    //   the object literals formed using this contructor would have this constructor function and pre-provided prototype
+      function objn(name) {
+        this.name = name;
+      }
+
+    //   We can further change the prototype or add new functions to it
+    objn.prototype.getname=function()
+    {
+        console.log(this.name);
+    }
+
+      let player1 = new objn("harsh");
+      player1.getname();
+      console.log(player1);
+
+    </script>
+  </body>
+</html>
