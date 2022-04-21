@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <h1>PROMISES</h1>
+
+    <script>
+
+
+// Promises using functions
+      let task = (order, work, time) => {
+        return new Promise((resolve, reject) => {
+          if (order == true) {
+            setTimeout(() => {
+              resolve(work());
+            }, time);
+          } else {
+            reject(work(),console.log("there are no orders to perform such actions!"));    //or simply reject(console.log("there are no orders to perform such actions!"));
+          }
+        });
+      };
+
+      task(   //In case of function this call is needed to pass to a then statement
+        true,
+        () => {
+          console.log("So lets play a game");
+        },
+        2000
+      )
+      
+    //   .then(()=>{    This is not possible, we need to call the task function inside then
+    //       setTimeout(() => {
+    //           console.log("But what to play?");
+    //       }, 3000);
+    //   })
+
+
+       .then(()=>{  
+          return task(true,() => {   //again the function is called so that then can be used again
+              console.log("But what to play?");
+          },3000);
+        })
+
+        .then(()=>{
+            return task(true,()=>{
+                console.log("The game could be cricket");
+            },1000);
+        })
+        
+        .then(()=>{   //as soon as the false statement is run the control goes to next catch statement if present else to then...
+            return task(false,()=>{
+                console.log("holaaaaaaaaa");
+            },3000)
+        })
+
+        .then(()=>{
+            return task(false,()=>{
+                console.log("I don't want to play");
+            },2000)
+        })
+
+       
+
+        .catch(()=>{
+            console.log("player left the game");
+        })
+
+        .finally(()=>{
+            setTimeout(() => {
+                console.log("game ended, go back home")
+            },4000 );
+            
+        })
+
+    </script>
+
+    <script src="promise-object.js"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch in js</title>
+  </head>
+
+  <body>
+    <button class="fetchbtn">Fetch on</button>
+    <div class="container"></div>
+
+    <script>
+      let fetchbtn = document.querySelector(".fetchbtn");
+
+      // let getData=()=>{
+      //     url="Vasufile.txt";
+      //     fetch(url).then((response)=>{
+      //         console.log(response);
+      //         return response.text();
+      //     })
+      //     .then((data)=>{
+      //         console.log(data);
+      //     })
+      //}
+
+      let getData = () => {
+        url = "https://api.github.com/users";
+        fetch(url)
+          .then((response) => {
+            console.log(response);
+            return response.json(); //returns a parsed json array, using response.text() gives the text form of json file
+          })
+          .then((data) => {
+            console.log(data);
+            console.log(data[8]);
+          });
+      };
+
+    //   Posting the data on a server
+      function postData() {
+        url = "http://dummy.restapiexample.com/api/v1/create";
+        data = '{"name":"harglry345945","salary":"123","age":"23"}';
+        params = {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: data,
+        };
+        fetch(url, params)
+          .then((response) => response.json())
+          .then((data) => console.log(data));
+      }
+      getData();
+      postData();
+    </script>
+  </body>
+</html>
